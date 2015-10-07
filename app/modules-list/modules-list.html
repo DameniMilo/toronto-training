@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-sm-12">
+		<best-module></best-module>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<h3 class="page-header">Modules list</h3>
+		<label>Search:</label>
+		<input type="text" ng-model="search.name">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Score</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="module in modulesData | orderBy:'+score' | filter:search">
+					<td>{{ module.id }}</td>
+					<td><a href="#/module-details/{{ module.id }}">{{ module.name }}</a></td>
+					<td>{{ module.score }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

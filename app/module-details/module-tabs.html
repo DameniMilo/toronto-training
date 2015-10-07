@@ -1,0 +1,22 @@
+<div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" ng-class="{active: $index == 0}" ng-repeat="(key, value) in tabs">
+      <a href="#{{ key }}" role="tab" show-tab>{{ key }}</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade" ng-class="$index == 0?'active in':''" id="{{ key }}" ng-repeat="(key, value) in tabs">
+      <table class="table table-condensed">
+          <tbody>
+            <tr ng-repeat="(subKey, subValue) in value">
+              <td>{{ subKey }}</td>
+              <td>{{ subValue }}</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
